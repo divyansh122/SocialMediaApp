@@ -9,13 +9,26 @@ const postListReducer=(currPostList,action)=>{
   let newPostList=currPostList;
 if(action.type==="DELETE_POST"){
   newPostList=currPostList.filter((post)=>post.id!==action.payload.postId);
-};
+}
+else if(action.type==="ADD_POST"){
+  newPostList=[action.payload,...currPostList];
+}
   return newPostList;
 }
 const Postliststore=({children})=>{
   const[postList,dispatch]=useReducer(postListReducer,DEFAULT_POST_LIST);
-  const addPost=()=>{
-   
+  const addPost=(userId,title,body,reactions,tags)=>{
+   dispatch({
+      type:"ADD_POST",
+      payload:{
+        id:Date.now().toString(),
+        userId:userId,
+        title:title,
+        body:body,
+        reactions:reactions ,
+        tags:tags,
+      },
+    });
   }
   const deletePost=(postId)=>{
     dispatch({

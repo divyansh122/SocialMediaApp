@@ -12,7 +12,7 @@ const Post = ({post}) => {
         {post.tags.map((tag)=>(
           <span className="badge bg-primary gap" key={tag}>{tag}</span>
         ))}<br/><hr style={{height:"3px"}}/>
-        <h5 className="reactio" ><AiFillLike/>{post.reactions}</h5>
+        <h5 className="reaction" ><AiFillLike/>{post.reactions}</h5>
       </div>
     </div>
   );
