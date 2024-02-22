@@ -15,7 +15,13 @@ const handleSubmit=(event)=>{
   const body=postbodyEle.current.value;
   const reactions=parseInt(reactionsEle.current.value);
   const tags=tagsEle.current.value.split(",");
+
   addPost(userId,title,body,reactions,tags);
+  userIdEle.current.value="";
+  titleEle.current.value="";
+  bodyEle.current.value="";
+  reactionsEle.current.value=" ";
+  tagsEle.current.value=" ";
 };
   return (
     <form className="create-post" onSubmit={handleSubmit}>
