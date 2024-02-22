@@ -19,7 +19,7 @@ const handleSubmit=(event)=>{
   addPost(userId,title,body,reactions,tags);
   userIdEle.current.value="";
   titleEle.current.value="";
-  bodyEle.current.value="";
+  postbodyEle.current.value="";
   reactionsEle.current.value=" ";
   tagsEle.current.value=" ";
 };
